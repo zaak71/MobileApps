@@ -52,9 +52,6 @@ class EmojiTableViewController: UITableViewController {
         if section == 0 {
             return emojis.count
         }
-        else if section == 1{
-            return 1
-        }
         else{
             return 0
         }
@@ -62,16 +59,11 @@ class EmojiTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EmojiCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EmojiCell", for: indexPath) as! EmojiTableViewCell
 
-        var emoji = emojis[indexPath.row]
+        let emoji = emojis[indexPath.row]
         
-        if(indexPath.section == 1){
-            emoji = emojis[0]
-        }
-        
-        cell.textLabel?.text = "\(emoji.symbol) - \(emoji.name)"
-        cell.detailTextLabel?.text = emoji.description
+        cell.update(with: emoji)
         cell.showsReorderControl = true
         
         
@@ -109,11 +101,25 @@ class EmojiTableViewController: UITableViewController {
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         let movedEmoji = emojis.remove(at: fromIndexPath.row)
-        emojis.insert(movedEmoji, at: to.row)
-        tableView.reloadData()
+        //if(fromIndexPath.section == to.section){
+            emojis.insert(movedEmoji, at: to.row)
+            tableView.reloadData()
+        //}
+        
     }
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        return .none
+        return .delete
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if(editingStyle == .delete){
+            emojis.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
  
 
