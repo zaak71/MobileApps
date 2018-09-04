@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController
 {
     @IBOutlet weak var mvpLabel: UILabel!
-    var firstName:String = ""
+    var firstName:String = "Zuhair"
     
     @IBOutlet weak var stretchOneLabel: UILabel!
     @IBOutlet weak var stretchTwoLabel: UILabel!
@@ -20,6 +20,8 @@ class ViewController: UIViewController
     /***************************************************
      * Start Your Code Here For Stretch #1 - Part I
      ***************************************************/
+    
+    var lastName = "Ali-Khan"
     
     /***************************************************
      * End Your Code Here For Stretch #1 - Part I
