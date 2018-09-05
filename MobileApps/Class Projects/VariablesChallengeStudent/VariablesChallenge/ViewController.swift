@@ -45,10 +45,10 @@ class ViewController: UIViewController
      * Start Your Code Here For Stretch #3 - Part I
      ***************************************************/
     
-    var p1Score = 10
+    var p1Score = 130
     var p2Score = 40
-    var p3Score = 60
-    var p4Score = 30
+    var p3Score = 600
+    var p4Score = 820
     
     /***************************************************
      * End Your Code Here For Stretch #3 - Part I
