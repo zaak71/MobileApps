@@ -10,14 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var bandInfoLabel: UILabel!
+    @IBOutlet weak var bandNameLabel: UILabel!
+    var favoriteBand = "Imagine Dragons"
+    var numberOfMembers = 4
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        bandNameLabel.text = favoriteBand
+        bandInfoLabel.text = "\(favoriteBand) has \(numberOfMembers) members."
     }
 
 
