@@ -213,7 +213,16 @@
                             <outlet property="delegate" destination="utg-VH-vDn" id="K9r-LE-1W0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="T5N-uO-M3I"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="T5N-uO-M3I">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5Nh-DK-xIA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Dcw-R8-sNy"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="nws-ws-kga" id="OZy-P2-0BG"/>
+                        <outlet property="nameTextField" destination="cWE-av-DEw" id="8iH-aH-whu"/>
+                        <outlet property="symbolTextField" destination="gFC-2s-xF8" id="Erx-ag-dBf"/>
+                        <outlet property="usageTextField" destination="gG1-pL-jlr" id="5zR-8m-NDS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZC4-JB-rIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -253,6 +262,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tYr-pd-baP"/>
+        <segue reference="hWx-Dw-QUA"/>
     </inferredMetricsTieBreakers>
 </document>

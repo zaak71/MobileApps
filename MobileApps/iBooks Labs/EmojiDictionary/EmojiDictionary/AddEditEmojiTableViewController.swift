@@ -10,10 +10,20 @@ import UIKit
 
 class AddEditEmojiTableViewController: UITableViewController {
 
-    var emoji: Emoji
+    @IBOutlet weak var symbolTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var usageTextField: UITextField!
+    @IBOutlet weak var descriptionTextField: UITextField!
+    var emoji: Emoji?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let emoji = emoji {
+            symbolTextField.text = emoji.symbol
+            nameTextField.text = emoji.name
+            usageTextField.text = emoji.usage
+            descriptionTextField.text = emoji.description
+        }
     }
 
     override func didReceiveMemoryWarning() {
