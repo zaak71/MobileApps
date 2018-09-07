@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22DA883160DA7759BBF7F37E /* Pods_RealtimeDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D38C578149F549F76E0401 /* Pods_RealtimeDatabase.framework */; };
 		25DB0C7F2141F39A00915381 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB0C7E2141F39A00915381 /* AppDelegate.swift */; };
 		25DB0C812141F39A00915381 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB0C802141F39A00915381 /* ViewController.swift */; };
 		25DB0C842141F39A00915381 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DB0C822141F39A00915381 /* Main.storyboard */; };
 		25DB0C862141F3A000915381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25DB0C852141F3A000915381 /* Assets.xcassets */; };
 		25DB0C892141F3A000915381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DB0C872141F3A000915381 /* LaunchScreen.storyboard */; };
+		25DB0C912141F7C100915381 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25DB0C902141F7C100915381 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		25DB0C852141F3A000915381 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25DB0C882141F3A000915381 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25DB0C8A2141F3A000915381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25DB0C902141F7C100915381 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2D72313E21CFFADC6946AF26 /* Pods-RealtimeDatabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtimeDatabase.release.xcconfig"; path = "Target Support Files/Pods-RealtimeDatabase/Pods-RealtimeDatabase.release.xcconfig"; sourceTree = "<group>"; };
+		366B3FACEAF0BFAB2C743222 /* Pods-RealtimeDatabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtimeDatabase.debug.xcconfig"; path = "Target Support Files/Pods-RealtimeDatabase/Pods-RealtimeDatabase.debug.xcconfig"; sourceTree = "<group>"; };
+		72D38C578149F549F76E0401 /* Pods_RealtimeDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealtimeDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22DA883160DA7759BBF7F37E /* Pods_RealtimeDatabase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1801F5B8B7E91BA6C6A58E17 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				366B3FACEAF0BFAB2C743222 /* Pods-RealtimeDatabase.debug.xcconfig */,
+				2D72313E21CFFADC6946AF26 /* Pods-RealtimeDatabase.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		25DB0C722141F39A00915381 = {
 			isa = PBXGroup;
 			children = (
 				25DB0C7D2141F39A00915381 /* RealtimeDatabase */,
 				25DB0C7C2141F39A00915381 /* Products */,
+				1801F5B8B7E91BA6C6A58E17 /* Pods */,
+				86D8D80CE717161F52190166 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +72,7 @@
 		25DB0C7D2141F39A00915381 /* RealtimeDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				25DB0C902141F7C100915381 /* GoogleService-Info.plist */,
 				25DB0C7E2141F39A00915381 /* AppDelegate.swift */,
 				25DB0C802141F39A00915381 /* ViewController.swift */,
 				25DB0C822141F39A00915381 /* Main.storyboard */,
@@ -64,6 +83,14 @@
 			path = RealtimeDatabase;
 			sourceTree = "<group>";
 		};
+		86D8D80CE717161F52190166 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72D38C578149F549F76E0401 /* Pods_RealtimeDatabase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,6 +98,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 25DB0C8D2141F3A000915381 /* Build configuration list for PBXNativeTarget "RealtimeDatabase" */;
 			buildPhases = (
+				2403C76CC8AF6D0F64950E81 /* [CP] Check Pods Manifest.lock */,
 				25DB0C772141F39A00915381 /* Sources */,
 				25DB0C782141F39A00915381 /* Frameworks */,
 				25DB0C792141F39A00915381 /* Resources */,
@@ -123,12 +151,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				25DB0C892141F3A000915381 /* LaunchScreen.storyboard in Resources */,
+				25DB0C912141F7C100915381 /* GoogleService-Info.plist in Resources */,
 				25DB0C862141F3A000915381 /* Assets.xcassets in Resources */,
 				25DB0C842141F39A00915381 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2403C76CC8AF6D0F64950E81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RealtimeDatabase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		25DB0C772141F39A00915381 /* Sources */ = {
@@ -278,6 +328,7 @@
 		};
 		25DB0C8E2141F3A000915381 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 366B3FACEAF0BFAB2C743222 /* Pods-RealtimeDatabase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +347,7 @@
 		};
 		25DB0C8F2141F3A000915381 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D72313E21CFFADC6946AF26 /* Pods-RealtimeDatabase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
