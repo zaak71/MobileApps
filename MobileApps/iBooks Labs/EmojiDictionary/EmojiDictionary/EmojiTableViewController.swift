@@ -108,8 +108,9 @@ class EmojiTableViewController: UITableViewController {
         return true
     }
     */
-    func unwindToEmojiTableView(){
-        
+    @IBAction func unwindToEmojiTableView(_ sender: UIStoryboardSegue) {
+        //let sourceViewController = sender.source
+        // Use data from the view controller which initiated the unwind segue
     }
     
     // MARK: - Navigation

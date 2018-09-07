@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Emoji Table View Controller-->
         <scene sceneID="cNg-8L-NN9">
             <objects>
                 <tableViewController id="AIw-A5-GAZ" customClass="EmojiTableViewController" customModule="EmojiDictionary" customModuleProvider="target" sceneMemberID="viewController">
@@ -76,7 +76,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="6kO-d1-4BK">
+                    <navigationItem key="navigationItem" id="6kO-d1-4BK">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="YLn-ml-cUw">
                             <connections>
                                 <action selector="editButtonTapped:" destination="AIw-A5-GAZ" id="K9N-JP-RHe"/>
@@ -94,7 +94,7 @@
             </objects>
             <point key="canvasLocation" x="482" y="197"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Add Edit Emoji Table View Controller-->
         <scene sceneID="IiL-wD-bqz">
             <objects>
                 <tableViewController id="utg-VH-vDn" customClass="AddEditEmojiTableViewController" customModule="EmojiDictionary" customModuleProvider="target" sceneMemberID="viewController">
@@ -117,6 +117,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="utg-VH-vDn" eventType="editingChanged" id="1Xe-qC-o9P"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -143,6 +146,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="utg-VH-vDn" eventType="editingChanged" id="fI0-t2-eo8"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -169,6 +175,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="utg-VH-vDn" eventType="editingChanged" id="Hew-pa-0Ia"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -195,6 +204,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="utg-VH-vDn" eventType="editingChanged" id="Enu-VY-OZU"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -213,18 +225,28 @@
                             <outlet property="delegate" destination="utg-VH-vDn" id="K9r-LE-1W0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="T5N-uO-M3I">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5Nh-DK-xIA"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Dcw-R8-sNy"/>
+                    <navigationItem key="navigationItem" id="T5N-uO-M3I">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5Nh-DK-xIA">
+                            <connections>
+                                <segue destination="7Nd-rI-sDE" kind="unwind" unwindAction="unwindToEmojiTableView:" id="lEN-xU-9rg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Dcw-R8-sNy">
+                            <connections>
+                                <segue destination="7Nd-rI-sDE" kind="unwind" identifier="saveUnwind" unwindAction="unwindToEmojiTableView:" id="UDJ-GV-0YX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionTextField" destination="nws-ws-kga" id="OZy-P2-0BG"/>
                         <outlet property="nameTextField" destination="cWE-av-DEw" id="8iH-aH-whu"/>
+                        <outlet property="saveButton" destination="Dcw-R8-sNy" id="vLN-VV-2Cn"/>
                         <outlet property="symbolTextField" destination="gFC-2s-xF8" id="Erx-ag-dBf"/>
                         <outlet property="usageTextField" destination="gG1-pL-jlr" id="5zR-8m-NDS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZC4-JB-rIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7Nd-rI-sDE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="468" y="964.76761619190415"/>
         </scene>
