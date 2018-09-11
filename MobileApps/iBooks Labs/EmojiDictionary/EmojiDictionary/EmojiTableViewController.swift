@@ -35,6 +35,7 @@ class EmojiTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem
+        
     }
 
     // MARK: - Table view data source
@@ -109,8 +110,20 @@ class EmojiTableViewController: UITableViewController {
     }
     */
     @IBAction func unwindToEmojiTableView(_ sender: UIStoryboardSegue) {
-        //let sourceViewController = sender.source
-        // Use data from the view controller which initiated the unwind segue
+        guard sender.identifier == "saveUnwind" else{return}
+        let sourceViewController = sender.source as! AddEditEmojiTableViewController
+        
+        if let emoji = sourceViewController.emoji {
+            if let selectedPath = tableView.indexPathForSelectedRow {
+                emojis[selectedPath.row] = emoji
+                tableView.reloadRows(at: [selectedPath], with: .none)
+            }
+            else{
+                let newIndexPath = IndexPath(row: emojis.count, section: 0)
+                emojis.append(emoji)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        }
     }
     
     // MARK: - Navigation

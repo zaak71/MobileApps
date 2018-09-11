@@ -8,11 +8,15 @@
 
 import Foundation
 
-class Emoji {
+class Emoji : Codable {
     var symbol: String
     var name: String
     var description: String
     var usage: String
+    
+    //let archiveURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("emojis").appendPathExtension("plist")
+    
+    
     
     init(symbol: String, name: String, description: String,
          usage: String) {
@@ -20,5 +24,17 @@ class Emoji {
         self.name = name
         self.description = description
         self.usage = usage
+        
+    }
+    
+    func saveToFile(emojis: [Emoji]) {
+        let propertyListEncoder = PropertyListEncoder()
+        if let encodedEmojis = try? propertyListEncoder.encode(emojis) {
+            
+        }
+    }
+    func loadFromFile() -> [Emoji] {
+        
+        return []
     }
 }

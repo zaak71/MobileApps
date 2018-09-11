@@ -20,11 +20,11 @@ class AddEditEmojiTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let emoji = emoji {
-            symbolTextField.text = emoji.symbol
-            nameTextField.text = emoji.name
-            usageTextField.text = emoji.usage
-            descriptionTextField.text = emoji.description
+        if let newEmoji = emoji {
+            symbolTextField.text = newEmoji.symbol
+            nameTextField.text = newEmoji.name
+            usageTextField.text = newEmoji.usage
+            descriptionTextField.text = newEmoji.description
         }
         
         updateSaveButtonState()
