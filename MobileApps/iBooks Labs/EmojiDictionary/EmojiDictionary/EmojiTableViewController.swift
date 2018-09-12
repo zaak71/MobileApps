@@ -34,6 +34,9 @@ class EmojiTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if !Emoji.loadFromFile().isEmpty{
+            emojis = Emoji.loadFromFile()
+        }
         navigationItem.leftBarButtonItem = editButtonItem
         
     }
@@ -124,6 +127,7 @@ class EmojiTableViewController: UITableViewController {
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
         }
+        Emoji.saveToFile(emojis: emojis)
     }
     
     // MARK: - Navigation

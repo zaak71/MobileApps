@@ -14,9 +14,9 @@ class Emoji : Codable {
     var description: String
     var usage: String
     
-    //let archiveURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("emojis").appendPathExtension("plist")
     
-    
+    var documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    static var archiveURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("emojis").appendingPathExtension("plist")
     
     init(symbol: String, name: String, description: String,
          usage: String) {
@@ -24,17 +24,22 @@ class Emoji : Codable {
         self.name = name
         self.description = description
         self.usage = usage
-        
     }
     
-    func saveToFile(emojis: [Emoji]) {
+    static func saveToFile(emojis: [Emoji]) {
         let propertyListEncoder = PropertyListEncoder()
-        if let encodedEmojis = try? propertyListEncoder.encode(emojis) {
-            
-        }
-    }
-    func loadFromFile() -> [Emoji] {
         
+        let encodedEmojis = try? propertyListEncoder.encode(emojis)
+        
+        try? encodedEmojis?.write(to: archiveURL, options: .noFileProtection)
+    }
+    static func loadFromFile() -> [Emoji] {
+        let propertyListDecoder = PropertyListDecoder()
+        if let retrievedEmojis = try? Data(contentsOf: archiveURL),
+            let decodedEmojis = try? propertyListDecoder.decode(Array<Emoji>.self, from: retrievedEmojis) {
+            print(decodedEmojis)
+            return decodedEmojis
+        }
         return []
     }
 }
