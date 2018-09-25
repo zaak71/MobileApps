@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
+        clickMeButton.isEnabled = false;
         super.viewDidLoad()
         var itemX = Int(helloWorldLabel.center.x)+60
         var itemY = Int(helloWorldLabel.center.y)-50
@@ -40,6 +42,7 @@ class ViewController: UIViewController {
         yellowButton.setTitleColor(UIColor.blue, for: UIControlState.normal)
         //yellowButton.showsTouchWhenHighlighted = true
         yellowButton.adjustsImageWhenHighlighted = true
+        yellowButton.adjustsImageWhenDisabled = true;
         yellowButton.isEnabled = true
         yellowButton.isUserInteractionEnabled = true
         self.view.addSubview(yellowButton)
