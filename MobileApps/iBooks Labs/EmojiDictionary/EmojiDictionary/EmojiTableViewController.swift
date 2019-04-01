@@ -126,10 +126,10 @@ class EmojiTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EditEmoji" {
+        if segue.identifier == "editEmoji" {
             let indexPath = tableView.indexPathForSelectedRow!
             let emoji = emojis[indexPath.row]
-            let addEditEmojiTableViewController = segue.destination as! AddEditEmojiTableViewController
+            let addEditEmojiTableViewController = (segue.destination as! UINavigationController).topViewController as! AddEditEmojiTableViewController
             addEditEmojiTableViewController.emoji = emoji
         }
     }
